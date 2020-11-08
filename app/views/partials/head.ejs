@@ -1,0 +1,12 @@
+<title><%= pageTitle %></title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<% if (env=='prod') { %>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/app.min.css">
+<% }else{ %>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/pure.css">
+  <link rel="stylesheet" href="./assets/css/grids-responsives.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+<% } %>

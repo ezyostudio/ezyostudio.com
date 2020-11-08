@@ -1,0 +1,71 @@
+#!/usr/bin/env node
+
+var app = require('../app');
+const fs = require('fs-extra');
+const path = require('path');
+const uglifyJS = require("uglify-es");
+const uglifycss = require('uglifycss');
+
+
+console.clear();
+
+const srcFolder = (...args) => {
+    return path.join(__dirname, '..', ...args)
+}
+
+const distFolder = (...args) => {
+    return path.join(__dirname, '../dist', ...args)
+}
+
+// Compile
+
+fs.emptyDirSync(distFolder());
+
+fs.copySync(srcFolder('public'), distFolder('/'));
+console.log('[SUCCESS] assets/')
+
+// const jsDirents = fs.readdirSync(distFolder('assets/js'), { withFileTypes: true });
+// let jsFiles = {};
+// for (const file of jsDirents) {
+//     if(file.isFile() && path.extname(file.name)=='.js'){
+//         jsFiles[file.name] = fs.readFileSync(distFolder('assets/js', file.name), "utf8")
+//     }
+// }
+// let result = (uglifyJS.minify(jsFiles))
+// console.log(result);
+// fs.writeFileSync(distFolder('assets/js/app.min.js'), result.code);
+// console.log('[SUCCESS] assets/js');
+
+const cssDirents = fs.readdirSync(distFolder('assets/css'), { withFileTypes: true });
+let cssFiles = [];
+for (const file of cssDirents) {
+    if(file.isFile() && path.extname(file.name)=='.css'){
+        cssFiles.push(distFolder('assets/css', file.name));
+    }
+}
+fs.writeFileSync(distFolder('assets/css/app.min.css'), uglifycss.processFiles(
+    cssFiles,
+));
+console.log('[SUCCESS] assets/css');
+
+
+
+// Compile views
+
+
+const viewDirents = fs.readdirSync(srcFolder('views'), { withFileTypes: true });
+
+for (const file of viewDirents) {
+    if(file.isFile()){
+        let page = path.basename(file.name, '.ejs');
+        app.render(page, {page:page, env:'prod'}, (err, res) =>{
+            if (err)
+                console.log('Error rendering ' + page, err)
+            else {
+                fs.writeFileSync(distFolder(page + '.html'), res);
+                console.log('[SUCCESS] ' + page + '.html');
+            }
+        });
+    }
+    
+}

@@ -1,0 +1,13 @@
+<header>
+  <div class="carousel">
+    <div class="carousel-content">
+      <% carouselItems.forEach(function(item, index){ %>
+        <div style="background-image: url(<%- item.image %>)" data-text-color="<%- item.color %>" class="carousel-item"></div>
+      <% }); %>
+    </div>
+  </div>
+  <div class="container">
+    <h1>EZYO<br><span>Studio</span></h1>
+    <p>Voyez ce jeu exquis wallon, de graphie en kit mais bref. Portez ce vieux whisky au juge blond.</p>
+  </div>
+</header>

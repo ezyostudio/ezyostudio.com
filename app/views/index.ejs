@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% pageTitle = 'home' %>
+  <% include partials/head %>
+</head>
+
+<body>
+  <main>
+    <% include partials/menu %>
+
+    <% carouselItems = [
+      {
+        image: './assets/images/c1.jpg',
+        color: '#FAAA31'
+      },
+      {
+        image: './assets/images/c2.jpg',
+        color: '#565251'
+      },
+      {
+        image: './assets/images/c3.jpg',
+        color: '#68CCD1'
+      },
+    ] %>
+
+    <% include sections/header %>
+
+    <section>
+      <div class="container">
+        <p><i>Bonjour</i></p>
+      </div>
+    </section>
+    <section></section>
+    
+
+    <% include partials/footer %>
+  </main>
+</body>
+<% include partials/script %>
+
+</html>
