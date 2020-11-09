@@ -202,7 +202,13 @@ header .container p {
   margin-top: 50px;
 }
 
+/*
+    Rows
+*/
 
+.row-2 {
+  grid-template-rows: 1fr 1fr
+}
 
 /*
   Section numbers
@@ -225,4 +231,33 @@ header .container p {
   letter-spacing: 5.8px;
   font-size: 29px;
   margin: 0;
+}
+
+/*
+  Section projets
+*/
+
+.projets-grid img{
+  width: 100%;
+}
+
+.grid-image {
+  width: 100%;
+  height: 496px;
+  overflow: hidden;
+}
+
+.projets-grid img {
+  width: 100%;
+}
+
+#c3 {
+  position: relative;
+  top: -110px;
+}
+
+#c2 {
+  width: 150%;
+  position: relative;
+  left: -55px;
 }
