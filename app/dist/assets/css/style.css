@@ -128,7 +128,6 @@ header .container p {
   font-size: 27px;
   margin-top: 9px;
   width: 60%;
-
 }
 /*
   ====================================================================================
@@ -138,7 +137,6 @@ header .container p {
 
 .container-fluid {
   width: 100%;
-  background-color: white;
   padding: 170px 140px;
 }
 
@@ -184,21 +182,26 @@ header .container p {
 /*
     Cols
 */
-.col-2 {
+
+.col {
   display: grid;
+}
+
+.col-2 {
   grid-template-columns: 1fr 1fr;
   gap: 100px;
 }
 
 .col-3 {
-  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 75px;
 }
 
-.col-2 h3:not(:first-of-type), .col-3 h3:not(:first-of-type) {
+.col h3:not(:first-of-type) {
   margin-top: 50px;
 }
+
+
 
 /*
   Section numbers
