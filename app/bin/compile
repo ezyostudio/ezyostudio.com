@@ -14,7 +14,7 @@ const srcFolder = (...args) => {
 }
 
 const distFolder = (...args) => {
-    return path.join(__dirname, '../dist', ...args)
+    return path.join(__dirname, '../../docs', ...args)
 }
 
 // Compile
