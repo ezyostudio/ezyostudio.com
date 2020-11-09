@@ -198,6 +198,11 @@ header .container p {
   gap: 75px;
 }
 
+.col-5 {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 75px;
+}
+
 .col h3:not(:first-of-type) {
   margin-top: 50px;
 }
@@ -260,4 +265,40 @@ header .container p {
   width: 150%;
   position: relative;
   left: -55px;
+}
+
+/*
+  Section profile
+*/
+
+.profile-card {
+  text-align: center;
+}
+
+.profile-pic{
+  width: 200px;
+  border-radius: 100px;
+  margin-top: 10px;
+}
+
+.profile-card .logo {
+  width: 25px;
+  filter: saturate(50%);
+}
+
+.profile-card h4 {
+  margin-top: 32px;
+  margin-bottom: 0;
+  font-size: 16px;
+  letter-spacing: 1.6px;
+}
+
+.profile-card p {
+  font-size: 16px;
+  line-height: 20px;
+  margin: 13px 0;
+}
+
+.logo:first-of-type {
+  margin-right: 20px;
 }
