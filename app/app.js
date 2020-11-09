@@ -25,7 +25,7 @@ app.use(logger('dev'));
 // app.use(express.urlencoded({ extended: false }));
 // app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/compiled', express.static(path.join(__dirname, 'dist')));
+app.use('/compiled', express.static(path.join(__dirname, '../docs')));
 
 
 app.get('/(:page)?', function(req, res, next) {
