@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {  
   const animator = new TypingAnimator({
-    // fixedWidth: true,
     target: 'header .container h1 span',
     loop: true,
     loopDelay: 2500,

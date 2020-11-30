@@ -237,6 +237,9 @@ TypingAnimator.prototype.Commands = {
 TypingAnimator.prototype._cursorStyle = `
 .w-cursor {
   position:relative;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  overflow: initial;
 }.w-cursor::after {
   content: "|";
   position:absolute;

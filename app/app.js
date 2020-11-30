@@ -19,6 +19,7 @@ app.use(compression({ filter: (req, res) => {
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.disable('view cache');
 
 app.use(logger('dev'));
 // app.use(express.json());
